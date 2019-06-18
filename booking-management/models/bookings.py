@@ -1,9 +1,7 @@
-# import sys
-# sys.path.append('..')
-from app import app
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy(app)
+import sys
+sys.path.append('..')
+from db import db
+from datetime import datetime
 
 
 class Bookings(db.Model):
@@ -12,7 +10,7 @@ class Bookings(db.Model):
     cust_name = db.Column(db.String(20), unique=True, nullable=False)
     resturant_name = db.Column(db.String(200), nullable=False, default='default.jpg')
     no_of_seats = db.Column(db.String(60), nullable=False)
-    booking_date = db.Column(db.DateTime, nullable=False)
+    booking_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     # resturant_id = db.relationship('resturant', backref='resturant_name', lazy=True)
 
 

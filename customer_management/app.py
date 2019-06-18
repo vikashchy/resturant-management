@@ -13,7 +13,8 @@ def get_customer_details(cust_id):
         conn = create_conn()
         cur = conn.cursor()
         cur.execute(sql)
-        cust_details = cur.fetchone()
+        cust_details = cur.fetchall()
+        print(cust_details)
         cur.close()
         conn.close()
         return jsonify({'cust_id': cust_details[0], 'cust_name': cust_details[1], 'cust_email': cust_details[2],

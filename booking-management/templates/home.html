@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<!--    <link rel="stylesheet" href= "{{ url_for('static',filename='styles.css') }}">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <title>Online Table Reservation System</title>
 </head>
 <body>
 <h2 align="center"> Reserve a table at your favorite place </h2><br>
 <h5 align="left"> Welcome {{user_name}}, please proceed with your booking !!</h5><br>
-<form>
+<form action="{{url_for('booking')}}" method="post">
     <table>
         <tr>
             <td align="center">Select Resturant</td>
-            <td><select>    {% for resturant in resturants %}
-                            <option>{{resturant[0]}}</option>
-                            {%endfor%}
-                </select><br><br>
+            <td><select name="resturant"> {% for resturant in resturants %}
+                <option>{{resturant[0]}}</option>
+                {%endfor%}
+            </select><br><br>
             </td>
         </tr>
         <tr>
             <td>Name</td>
-            <td><input id="name" required value="{{user_name}}"><br><br>
+            <td><input name="user_name" required value="{{user_name}}"><br><br>
             </td>
         </tr>
         <tr>
             <td>Phone</td>
             <td>
-                <input id="phone" required><br><br>
+                <input name="phone" required><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="email" name="email" required><br><br>
             </td>
         </tr>
         <tr>
@@ -39,17 +44,18 @@
                 No. of seats
             </td>
             <td>
-                <input id="no_of_seats" required type="number"><br><br>
+                <input name="no_of_seats" required type="number"><br><br>
             </td>
 
-    <tr>
-        <td>
-            <input type="submit">
-        </td>
-        <td>
-            <input type="reset">
-        </td>
-    </tr>
-</table></form>
+        <tr>
+            <td>
+                <input type="submit">
+            </td>
+            <td>
+                <input type="reset">
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
