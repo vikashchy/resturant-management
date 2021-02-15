@@ -1,5 +1,5 @@
 This is a sample implementation of restaurant management system with Flask-Restful
-Docker image: vikashchy/restaurant-management
+````Docker image: vikashchy/restaurant-management````
 
 #### To build and deploy image
 docker-compose up --build -d 
