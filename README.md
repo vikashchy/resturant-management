@@ -1,2 +1,17 @@
-# Resturant Management System
-Online Resturant Management System Using Flask &amp; Microservices
+This is a sample implementation of restaurant management system with Flask-Restful
+
+#### To build and deploy image
+docker-compose up --build -d 
+
+#### Techstack used:
+Flask-Restful
+Flask-Sqlalchemy
+Flask-mail
+Docker & Docker Compose
+Sqlite
+
+# Remaining work
+Integrate flask-dance for Oauth
+Flask-jwt for token based auth
+Redis-cache for cahing
+
