@@ -1,6 +1,6 @@
 from datetime import datetime
-
-from flask_restful import Resource, request
+from flask import request
+from flask_restful import Resource
 
 from models.bookings import Bookings
 
