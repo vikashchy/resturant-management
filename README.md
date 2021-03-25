@@ -22,3 +22,5 @@ Flask-jwt for token based auth
 
 Redis-cache for cahing
 
+https://documenter.getpostman.com/view/4908008/TWDTMykP
+
